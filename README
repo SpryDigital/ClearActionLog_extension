@@ -1,0 +1,1 @@
+This CiviCRM extension sets up a Scheduled Job to run once a day.  It truncates the civicrm_action_log table.  This is to make sure the scheduled reminders are sent.
