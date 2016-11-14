@@ -11,7 +11,7 @@ require_once 'CRM/ClearActionLog/DAO/ClearActionLog.php';
  * @see http://wiki.civicrm.org/confluence/display/CRM/API+Architecture+Standards
  */
 function _civicrm_api3_action_log_Clear_spec(&$spec) {
-  $lock = Civi::lockManager()->acquire('worker.core.ActionLog');
+  $lock = Civi\Core\Container::singleton()->get('lockManager')->acquire('worker.core.ActionLog');
   if (!$lock->isAcquired()) {
     return civicrm_api3_create_error('Could not acquire lock, another ActionLog process is running');
   }
